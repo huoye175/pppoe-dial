@@ -180,10 +180,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 				EnableWindow(button1, FALSE);
 				if (RsaCreateLink(LinkName, hWnd) == 0)
 					RsaDial(LinkName, UserName, Password, hWnd);
-				//hThread = CreateThread(NULL, 0, ThreadProc, NULL, 0, &threadID); // 创建线程
-				//WaitForSingleObject(hThread, INFINITE);
-				//CloseHandle(hThread); // 关闭内核对象
-				//ConnectNotify(hWnd);
+				else
+					MessageBox(NULL, L"error", L"error", 0);
 			}
 		}
 		break;
